@@ -1,4 +1,4 @@
-package com.mario.spring.demo;
+package com.mario.spring.web;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
