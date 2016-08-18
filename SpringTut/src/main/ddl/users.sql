@@ -12,10 +12,8 @@ create table AUTHORITIES (
 
 create UNIQUE index AUTHORITIES_IDX on AUTHORITIES(username, authority) ;
 
-insert into USERS VALUES ('ADMIN', 'ADMIN', 1);
-insert into AUTHORITIES VALUES  ('ADMIN', 'ADMIN');
+insert into USERS(user_id, username, password, email, enabled) VALUES (USER_ID_SEQ.nextval, 'ADMIN', 'ADMIN', 'ADMIN@ADMIN.ADMIN', 1);
+insert into AUTHORITIES(AUTHORITY_ID, AUTHORITY) VALUES  (AUTHORITY_ID_SEQ.nextval, 'ADMIN');
 
-insert into USERS VALUES ('Test1', 'Test1', 1);
-insert into AUTHORITIES VALUES  ('Test1', 'ADMIN');
 
 commit;
