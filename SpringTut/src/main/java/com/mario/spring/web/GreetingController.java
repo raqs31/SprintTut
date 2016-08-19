@@ -1,10 +1,10 @@
 package com.mario.spring.web;
 
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
+import javax.annotation.security.RolesAllowed;
 import java.util.Date;
 import java.util.Map;
 
@@ -17,6 +17,15 @@ public class GreetingController extends WebMvcConfigurerAdapter {
 	public String home(Map<String, Object> model) {
 		model.put("message", "Hello World");
 		model.put("title", "Hello Home");
+		model.put("date", new Date());
+		return "greeting";
+	}
+
+	@GetMapping("/buu")
+	@RolesAllowed({"SUPERADMI"})
+	public String accesDeniedPage(Map<String, Object> model) {
+		model.put("message", "Hello World buuuuuuuuuu");
+		model.put("title", "Hello Home buuuuuu");
 		model.put("date", new Date());
 		return "greeting";
 	}
