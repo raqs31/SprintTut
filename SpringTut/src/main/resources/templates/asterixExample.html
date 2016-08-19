@@ -14,12 +14,14 @@
             <ul class="nav">
                 <li><a th:text="#{nav.home}" th:href="@{/}" href="home.html"> Home </a></li>
                 <li><a th:text="#{nav.logout}" th:href="@{/logout}" href="logout"> Logout </a></li>
-                <li><a th:text="|#{nav.logged} ${user.name}|">Logged</a></li>
             </ul>
         </div>
     </div>
-    <h1 th:text="#{greeting.home}">Title</h1>
-    <div th:text="${#calendars.format(#dates.createNow(), 'dd MMMM yy')}"></div>
+    <div class="table" th:object="${actor}">
+        <div th:text="${actor}"> </div>
+        <div th:text="*{personalData}"> </div>
+        <div th:text="*{personalData.adress}"> </div>
+    </div>
 </div>
 </body>
 </html>

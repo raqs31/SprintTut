@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import javax.annotation.security.RolesAllowed;
+import java.security.Principal;
 import java.util.Date;
 import java.util.Map;
 
@@ -14,9 +15,10 @@ import java.util.Map;
 @Controller
 public class GreetingController extends WebMvcConfigurerAdapter {
 	@GetMapping("/")
-	public String home(Map<String, Object> model) {
+	public String home(Map<String, Object> model, Principal principal) {
 		model.put("message", "Hello World");
 		model.put("date", new Date());
+		model.put("user", principal);
 		return "greeting";
 	}
 
