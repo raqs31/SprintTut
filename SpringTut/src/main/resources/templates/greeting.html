@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title th:text="${title}">Title</title>
+    <title th:text="#{greeting.title}">Title</title>
     <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"
           href="../../css/bootstrap.min.css"/>
 </head>
@@ -17,8 +17,8 @@
             </ul>
         </div>
     </div>
-    <h1 th:text="${title}">Title</h1>
-    <div th:text="${message}">Fake content</div>
+    <h1 th:text="#{greeting.home}">Title</h1>
+    <div th:text="${date}">Fake content</div>
 </div>
 </body>
 </html>
