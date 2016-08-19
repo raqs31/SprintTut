@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title th:text="#{greeting.title}">Title</title>
@@ -14,19 +14,10 @@
             <ul class="nav">
                 <li><a th:text="#{nav.home}" th:href="@{/}" href="home.html"> Home </a></li>
                 <li><a th:text="#{nav.logout}" th:href="@{/logout}" href="logout"> Logout </a></li>
-                <li><a th:text="|#{nav.logged} ${user.name}|">Logged</a></li>
             </ul>
         </div>
     </div>
-    <h1 th:text="#{greeting.home}">Title</h1>
-    <div th:text="${#calendars.format(#dates.createNow(), 'dd MMMM yy')}"></div>
-    <div class="navbar-fixed-bottom">
-        <p>Select option</p>
-        <ol>
-            <li><a th:href="@{arena/actors}">Lista aktorów</a></li>
-            <li><a th:href="@{auth/profile}">Profil użytkownika</a></li>
-        </ol>
+TODO
     </div>
-</div>
 </body>
 </html>
