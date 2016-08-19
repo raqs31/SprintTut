@@ -18,7 +18,7 @@
         </div>
     </div>
     <div class="table" th:object="${actor}">
-        <div th:text="${actor}"> </div>
+        <div th:text="${#object}"> </div>
         <div th:text="*{personalData}"> </div>
         <div th:text="*{personalData.adress}"> </div>
     </div>
