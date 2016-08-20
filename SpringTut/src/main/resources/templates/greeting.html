@@ -19,6 +19,7 @@
         </div>
     </div>
     <h1 th:text="#{greeting.home}">Title</h1>
+    <h2 th:text="${@simpleSessionBean.nameOf}">Go</h2>
     <div th:text="${#calendars.format(#dates.createNow(), 'dd MMMM yy')}"></div>
     <div class="navbar-fixed-bottom">
         <p>Select option</p>

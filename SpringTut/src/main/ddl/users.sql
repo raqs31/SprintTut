@@ -1,19 +1,30 @@
 
-create table USERS (
-  username varchar2(256) not null PRIMARY KEY,
-  password varchar2(256) not null,
-  enabled number(1) not null
+
+declare
+  L_RET_USER_ID number;
+  L_USER_ROLE number;
+  L_ADMIN_ROLE number;
+  L_ADMIN_ID number;
+BEGIN
+
+  INSERT INTO USERS (user_id, username, password, email, enabled) VALUES (USER_ID_SEQ.nextval, 'ADMIN', 'ADMIN', 'ADMIN@ADMIN.ADMIN', 1) returning user_id into L_ADMIN_ID;
+  INSERT INTO AUTHORITIES (AUTHORITY_ID, AUTHORITY) VALUES (AUTHORITY_ID_SEQ.nextval, 'ADMIN') returning AUTHORITY_ID into L_ADMIN_ROLE;
+  INSERT INTO AUTHORITIES (AUTHORITY_ID, AUTHORITY) VALUES (AUTHORITY_ID_SEQ.nextval, 'USER') returning AUTHORITY_ID into L_USER_ROLE;
+
+  INSERT INTO USER_AUTHORITIES (user_id, authority_id) VALUES (L_ADMIN_ID, L_ADMIN_ROLE);
+
+  INSERT INTO USER_AUTHORITIES (user_id, authority_id) VALUES (L_ADMIN_ID, L_USER_ROLE);
+
+for i in 1 .. 10
+  loop
+    INSERT INTO USERS (user_id, username, password, email, enabled)
+    VALUES (USER_ID_SEQ.nextval, 'USER-' || i, 'user-' || i, 'user'|| i ||'@test.com', 1)
+    RETURNING USER_ID INTO L_RET_USER_ID;
+
+INSERT INTO USER_AUTHORITIES (user_id, authority_id) VALUES (
+  L_RET_USER_ID,
+    L_USER_ROLE
 );
-create table AUTHORITIES (
-  username varchar2(256) not null,
-  authority VARCHAR2(50) not null,
-  FOREIGN KEY (username) REFERENCES USERS (username)
-);
-
-create UNIQUE index AUTHORITIES_IDX on AUTHORITIES(username, authority) ;
-
-insert into USERS(user_id, username, password, email, enabled) VALUES (USER_ID_SEQ.nextval, 'ADMIN', 'ADMIN', 'ADMIN@ADMIN.ADMIN', 1);
-insert into AUTHORITIES(AUTHORITY_ID, AUTHORITY) VALUES  (AUTHORITY_ID_SEQ.nextval, 'ADMIN');
-
-
+end loop;
 commit;
+END;
