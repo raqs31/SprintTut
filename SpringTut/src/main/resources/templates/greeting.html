@@ -20,6 +20,14 @@
     </div>
     <h1 th:text="#{greeting.home}">Title</h1>
     <h2 th:text="${@simpleSessionBean.nameOf}">Go</h2>
+    <table>
+        <tr>
+            <th>Motivation to:</th>
+        </tr>
+        <tr th:each="prop : ${@simpleSessionBean.listOfProps}">
+            <td th:text="${prop}"></td>
+        </tr>
+    </table>
     <div th:text="${#calendars.format(#dates.createNow(), 'dd MMMM yy')}"></div>
     <div class="navbar-fixed-bottom">
         <p>Select option</p>
