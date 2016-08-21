@@ -7,21 +7,13 @@
 </head>
 <body>
 <div class="container">
-    <div class="navbar">
-        <div class="navbar-inner">
-            <a class="brand" href="http://www.thymeleaf.org"> Thymeleaf -
-                Plain </a>
-            <ul class="nav">
-                <li><a th:text="#{nav.home}" th:href="@{/}" href="home.html"> Home </a></li>
-                <li><a th:text="#{nav.logout}" th:href="@{/logout}" href="logout"> Logout </a></li>
-            </ul>
-        </div>
-    </div>
+    <div th:include="fragments/main :: navBar"></div>
     <div class="table" th:object="${actor}">
-        <div th:text="${#object}"> </div>
-        <div th:text="*{personalData}"> </div>
-        <div th:text="*{personalData.adress}"> </div>
+        <div th:text="${#object}"></div>
+        <div th:text="*{personalData}"></div>
+        <div th:text="*{personalData.adress}"></div>
     </div>
+    <div th:include="fragments/main :: footer"></div>
 </div>
 </body>
 </html>
