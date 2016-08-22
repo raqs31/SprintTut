@@ -16,6 +16,7 @@ public class UserProfilleController {
 	@GetMapping("/profile")
 	public String userProfile(Map<String, Object> model) {
 
-		return "/auth/profile";
+//		return "/auth/profile";
+		throw new RuntimeException("test wyjątku");
 	}
 }
