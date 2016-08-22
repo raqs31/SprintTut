@@ -11,6 +11,7 @@ import java.util.Date;
 
 @Data
 @Embeddable
+@Access(AccessType.FIELD)
 public class PersonalData {
 
 	@Column(name = "NAME")

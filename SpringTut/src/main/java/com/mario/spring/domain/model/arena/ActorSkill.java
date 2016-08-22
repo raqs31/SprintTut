@@ -1,6 +1,7 @@
 package com.mario.spring.domain.model.arena;
 
 import com.mario.spring.domain.model.AuditableEntity;
+import com.mario.spring.domain.model.dict.skill.Skill;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -17,6 +18,14 @@ public class ActorSkill extends AuditableEntity<Integer>{
 	@SequenceGenerator(name = "actorSkillsSeq", sequenceName = "ACTOR_SKILLS_IDX_SEQ")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "actorSkillsSeq")
 	private Integer skillId;
+
+	@ManyToOne(optional = false)
+	@JoinColumn(name = "ACTOR_ID", nullable = false)
+	private Actor actor;
+
+	@ManyToOne(optional = false)
+	@JoinColumn(name = "DICT_ID", nullable = false)
+	private Skill skill;
 
 	@Override
 	public Integer getId() {

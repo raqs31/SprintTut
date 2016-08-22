@@ -2,6 +2,8 @@ package com.mario.spring.domain.model.embedable;
 
 import lombok.Data;
 
+import javax.persistence.Access;
+import javax.persistence.AccessType;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
@@ -10,6 +12,7 @@ import javax.persistence.Embeddable;
  */
 @Data
 @Embeddable
+@Access(AccessType.FIELD)
 public class Adress {
 
 	@Column(name = "STREET")

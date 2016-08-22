@@ -1,18 +1,22 @@
 BEGIN
   FOR i IN 1 .. 5
   LOOP
-    FOR R IN
+    FOR RR IN
     (
     SELECT 'drop '
            || object_type
            || ' '
-           || object_name
-           || ';' stm
+           || object_name STM
     FROM
       SYS.USER_OBJECTS
     )
     LOOP
-      EXECUTE IMMEDIATE R.STM;
+      BEGIN
+        EXECUTE IMMEDIATE RR.STM;
+        EXCEPTION
+        WHEN OTHERS THEN
+        NULL;
+      END;
     END LOOP;
   END LOOP;
 END;

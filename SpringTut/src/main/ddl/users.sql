@@ -27,4 +27,4 @@ INSERT INTO USER_AUTHORITIES (user_id, authority_id) VALUES (
 );
 end loop;
 commit;
-END;`
+END;
