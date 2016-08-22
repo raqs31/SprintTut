@@ -15,6 +15,17 @@ import java.util.List;
 @Table(name = "USERS")
 @Data
 public class User extends AuditableEntity<Integer> {
+	public enum Gender {
+		MALE("M"),
+		FEMALE("F"),
+		UNSPECIFIED("WTF");
+
+		private String code;
+
+		Gender(String code) {
+			this.code = code;
+		}
+	}
 	@Id
 	@Column(name = "USER_ID")
 	@SequenceGenerator(name = "userIdSeq", initialValue = 1, sequenceName = "USER_ID_SEQ")
@@ -32,6 +43,10 @@ public class User extends AuditableEntity<Integer> {
 
 	@Column(name = "ENABLED", nullable = false)
 	private Boolean enabled;
+
+	@Column(name = "GENDER")
+	@Enumerated(EnumType.STRING)
+	private Gender gender;
 
 	@ManyToMany
 	@JoinTable(

@@ -1,4 +1,4 @@
-package com.mario.spring.repository.auth;
+package com.mario.spring.repository;
 
 import com.mario.spring.domain.model.auth.User;
 import org.springframework.data.repository.CrudRepository;
