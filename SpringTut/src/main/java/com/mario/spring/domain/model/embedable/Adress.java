@@ -17,4 +17,13 @@ public class Adress {
 
 	@Column(name = "CITY")
 	private String city;
+
+	@Column(name = "POSTAL_CODE")
+	private String postalCode;
+
+	@Column(name = "PROVINCE")
+	private String province;
+
+	@Column(name = "COUNTRY_CODE", length = 3)
+	private String countryCode;
 }

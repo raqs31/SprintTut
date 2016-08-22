@@ -2,7 +2,6 @@ package com.mario.spring.domain.model.arena;
 
 import com.mario.spring.domain.model.AuditableEntity;
 import com.mario.spring.domain.model.auth.User;
-import com.mario.spring.domain.model.embedable.PersonalData;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -24,13 +23,8 @@ public class Actor extends AuditableEntity<Integer> {
 	private Integer id;
 
 	@OneToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "USER_ID", unique = true)
+	@JoinColumn(name = "USER_ID", unique = true, nullable = false)
 	private User user;
-
-	@Embedded
-	private PersonalData personalData;
-
-
 
 	@Override
 	public Integer getId() {

@@ -29,8 +29,6 @@ public class AsterixExampleController {
 		fakePd.setName("MyLittle");
 		fakePd.setLastName("Friend");
 
-		fake.setPersonalData(fakePd);
-
 		model.put("actor", fake);
 
 		return "asterixExample";

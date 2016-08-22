@@ -1,6 +1,7 @@
 package com.mario.spring.domain.model.auth;
 
 import com.mario.spring.domain.model.AuditableEntity;
+import com.mario.spring.domain.model.embedable.PersonalData;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -39,6 +40,9 @@ public class User extends AuditableEntity<Integer> {
 			inverseJoinColumns = @JoinColumn(name = "AUTHORITY_ID", referencedColumnName = "AUTHORITY_ID")
 	)
 	private List<Authority> authorities;
+
+	@Embedded
+	PersonalData personalData;
 
 	@Override
 	public Integer getId() {

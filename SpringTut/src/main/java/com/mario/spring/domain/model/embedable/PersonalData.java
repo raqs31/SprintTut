@@ -26,6 +26,12 @@ public class PersonalData {
 	@Temporal(TemporalType.DATE)
 	private Date birthday;
 
+	@Column(name = "NIP")
+	private String nip;
+
+	@Column(name = "PHONE_NUM")
+	private String phoneNumber;
+
 	@Embedded
 	private Adress adress;
 }

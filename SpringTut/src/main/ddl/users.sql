@@ -7,7 +7,7 @@ declare
   L_ADMIN_ID number;
 BEGIN
 
-  INSERT INTO USERS (user_id, username, password, email, enabled) VALUES (USER_ID_SEQ.nextval, 'ADMIN', 'ADMIN', 'ADMIN@ADMIN.ADMIN', 1) returning user_id into L_ADMIN_ID;
+  INSERT INTO USERS (user_id, username, password, email, enabled) VALUES (USER_ID_SEQ.nextval, 'ADMIN', '$2a$10$24Sr8BvErLaC4htuQWPBWe17bXpv2aE.xetDKzALxBZN/ECwCRL.e', 'ADMIN@ADMIN.ADMIN', 1) returning user_id into L_ADMIN_ID;
   INSERT INTO AUTHORITIES (AUTHORITY_ID, AUTHORITY) VALUES (AUTHORITY_ID_SEQ.nextval, 'ADMIN') returning AUTHORITY_ID into L_ADMIN_ROLE;
   INSERT INTO AUTHORITIES (AUTHORITY_ID, AUTHORITY) VALUES (AUTHORITY_ID_SEQ.nextval, 'USER') returning AUTHORITY_ID into L_USER_ROLE;
 
@@ -18,7 +18,7 @@ BEGIN
 for i in 1 .. 10
   loop
     INSERT INTO USERS (user_id, username, password, email, enabled)
-    VALUES (USER_ID_SEQ.nextval, 'USER-' || i, 'user-' || i, 'user'|| i ||'@test.com', 1)
+    VALUES (USER_ID_SEQ.nextval, 'USER-' || i, '$2a$10$24Sr8BvErLaC4htuQWPBWe17bXpv2aE.xetDKzALxBZN/ECwCRL.e', 'user'|| i ||'@test.com', 1)
     RETURNING USER_ID INTO L_RET_USER_ID;
 
 INSERT INTO USER_AUTHORITIES (user_id, authority_id) VALUES (
@@ -27,4 +27,4 @@ INSERT INTO USER_AUTHORITIES (user_id, authority_id) VALUES (
 );
 end loop;
 commit;
-END;
+END;`
