@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" href="../../css/bootstrap.min.css"/>
+</head>
+<body>
+<div th:fragment="footer">
+    <div class="modal-footer">
+        <p>Select option</p>
+        <ol>
+            <li><a th:href="@{arena/actors}">Lista aktorów</a></li>
+            <li><a th:href="@{auth/profile}">Profil użytkownika</a></li>
+        </ol>
+    </div>
+</div>
+</body>
+</html>

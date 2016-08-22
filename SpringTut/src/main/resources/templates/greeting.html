@@ -1,13 +1,13 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      layout:decorator="fragments/layout">
 <head>
     <title th:text="#{greeting.title}">Title</title>
-    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"
-          href="../../css/bootstrap.min.css"/>
 </head>
 <body>
-<div class="container">
-    <div th:replace="fragments/main :: navBar"></div>
+<div layout:fragment="content">
     <h1 th:text="#{greeting.home}">Title</h1>
     <h2 th:text="${@simpleSessionBean.nameOf}">Go</h2>
     <table>
@@ -21,7 +21,6 @@
         </tr>
     </table>
     <div th:text="${#calendars.format(#dates.createNow(), 'dd MMMM yy hh:mm')}"></div>
-    <div th:include="fragments/main :: footer"></div>
 </div>
 </body>
 </html>

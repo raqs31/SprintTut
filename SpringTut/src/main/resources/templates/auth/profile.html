@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="fragments/layout">
 <head>
     <title th:text="#{greeting.title}">Title</title>
-    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"
-          href="../../css/bootstrap.min.css"/>
 </head>
 <body>
-<div class="container">
-    <div th:include="fragments/main :: navBar"></div>
+<div layout:fragment="content">
     TODO
 </div>
 </body>
