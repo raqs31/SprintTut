@@ -3,6 +3,7 @@ package com.mario.spring.domain.model.auth;
 import com.mario.spring.domain.model.AuditableEntity;
 import com.mario.spring.domain.model.embedable.PersonalData;
 import lombok.Data;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.List;
@@ -14,6 +15,7 @@ import java.util.List;
 @Entity
 @Table(name = "USERS")
 @Data
+@ToString(exclude = "authorities")
 public class User extends AuditableEntity<Integer> {
 	public enum Gender {
 		MALE("M"),

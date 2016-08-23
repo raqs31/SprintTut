@@ -38,4 +38,8 @@ public class UserServiceImpl implements UserService {
 
 		return authorities;
 	}
+
+	public User loadUser(String loginOrEmail) {
+		return userRepository.findOneByUserNameOrEmailAllIgnoreCase(loginOrEmail, loginOrEmail);
+	}
 }
