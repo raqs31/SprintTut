@@ -19,4 +19,16 @@ public class ThymeleafConfiguration {
 	public SpringSecurityDialect springSecurityDialect() {
 		return new SpringSecurityDialect();
 	}
+
+	/*@Bean
+	public ITemplateResolver defaultTemplateResolver(ThymeleafProperties thProperties,
+													 @Value("${spring.thymeleaf.templates_root:}") String templatesRoot) {
+		TemplateResolver resolver = new FileTemplateResolver();
+		resolver.setSuffix(thProperties.getSuffix());
+		resolver.setPrefix("classpath:/templatesZ");
+		resolver.setTemplateMode(thProperties.getMode());
+		resolver.setCharacterEncoding(thProperties.getEncoding().name());
+		resolver.setCacheable(thProperties.isCache());
+		return resolver;
+	}*/
 }
