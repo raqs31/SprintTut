@@ -1,8 +1,8 @@
-package com.mario.spring.service.auth.impl;
+package com.mario.spring.domain.service.auth.impl;
 
 import com.mario.spring.domain.model.auth.User;
-import com.mario.spring.repository.UserRepository;
-import com.mario.spring.service.auth.UserService;
+import com.mario.spring.domain.repository.repository.UserRepository;
+import com.mario.spring.domain.service.auth.UserService;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

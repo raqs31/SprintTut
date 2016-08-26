@@ -1,7 +1,7 @@
-package com.mario.spring.web.auth;
+package com.mario.spring.co.auth;
 
 import com.mario.spring.domain.model.auth.User;
-import com.mario.spring.service.auth.UserService;
+import com.mario.spring.domain.service.auth.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

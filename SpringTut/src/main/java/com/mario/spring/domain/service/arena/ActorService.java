@@ -1,4 +1,4 @@
-package com.mario.spring.service.arena;
+package com.mario.spring.domain.service.arena;
 
 import com.mario.spring.domain.model.arena.Actor;
 

@@ -1,4 +1,4 @@
-package com.mario.spring.web.auth;
+package com.mario.spring.co.auth;
 
 import org.apache.catalina.servlet4preview.http.HttpServletRequest;
 import org.apache.log4j.Logger;

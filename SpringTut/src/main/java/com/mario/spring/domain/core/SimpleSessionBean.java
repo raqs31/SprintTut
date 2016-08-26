@@ -1,4 +1,4 @@
-package com.mario.spring.core;
+package com.mario.spring.domain.core;
 
 import lombok.Data;
 import org.springframework.stereotype.Component;

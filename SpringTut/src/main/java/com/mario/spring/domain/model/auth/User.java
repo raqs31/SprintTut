@@ -15,7 +15,7 @@ import java.util.List;
 @Entity
 @Table(name = "USERS")
 @Data
-@ToString(exclude = "authorities")
+@ToString(exclude = {"authorities", "password"})
 public class User extends AuditableEntity<Integer> {
 	public enum Gender {
 		MALE("M"),

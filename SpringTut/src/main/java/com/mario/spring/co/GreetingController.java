@@ -1,4 +1,4 @@
-package com.mario.spring.web;
+package com.mario.spring.co;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

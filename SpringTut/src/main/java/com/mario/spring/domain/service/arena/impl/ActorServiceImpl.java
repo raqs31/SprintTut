@@ -1,12 +1,11 @@
-package com.mario.spring.service.arena.impl;
+package com.mario.spring.domain.service.arena.impl;
 
 import com.mario.spring.domain.model.arena.Actor;
-import com.mario.spring.repository.ActorRepository;
-import com.mario.spring.service.arena.ActorService;
+import com.mario.spring.domain.repository.repository.ActorRepository;
+import com.mario.spring.domain.service.arena.ActorService;
 import org.springframework.stereotype.Service;
 
 import javax.inject.Inject;
-import java.util.Iterator;
 
 /**
  * Created by raqsW on 2016-08-22.

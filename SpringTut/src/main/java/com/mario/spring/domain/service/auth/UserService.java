@@ -1,4 +1,4 @@
-package com.mario.spring.service.auth;
+package com.mario.spring.domain.service.auth;
 
 import com.mario.spring.domain.model.auth.User;
 import org.springframework.security.core.userdetails.UserDetailsService;

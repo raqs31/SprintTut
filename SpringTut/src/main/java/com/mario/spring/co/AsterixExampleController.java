@@ -1,4 +1,4 @@
-package com.mario.spring.web;
+package com.mario.spring.co;
 
 import com.mario.spring.domain.model.arena.Actor;
 import com.mario.spring.domain.model.embedable.Adress;

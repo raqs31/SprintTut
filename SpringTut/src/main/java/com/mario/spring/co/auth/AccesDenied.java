@@ -1,4 +1,4 @@
-package com.mario.spring.web.auth;
+package com.mario.spring.co.auth;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

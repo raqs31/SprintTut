@@ -1,4 +1,4 @@
-package com.mario.spring.web.arena;
+package com.mario.spring.co.arena;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

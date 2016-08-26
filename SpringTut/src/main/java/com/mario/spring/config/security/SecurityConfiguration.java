@@ -1,6 +1,6 @@
 package com.mario.spring.config.security;
 
-import com.mario.spring.service.auth.UserService;
+import com.mario.spring.domain.service.auth.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -39,7 +39,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests().antMatchers("/css/**").permitAll().anyRequest().fullyAuthenticated()
 				.and()
-				.formLogin().loginPage("/login").failureUrl("/auth/login?error").permitAll()
+				.formLogin().loginPage("/auth/login").failureUrl("/auth/login?error").permitAll()
 				.and()
 				.logout().permitAll().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
 				.and()
