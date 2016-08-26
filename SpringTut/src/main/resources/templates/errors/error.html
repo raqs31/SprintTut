@@ -6,24 +6,24 @@
     <title>Error</title>
 </head>
 <body>
-<div layout:fragment="content">
-    <div>
-        There was an unexpected error. <span class="strong" th:text="${errStat}"></span>
+    <div layout:fragment="content">
+        <div>
+            There was an unexpected error. <span class="strong" th:text="${errStat}"></span>
+        </div>
+        <div class="alert-error">
+            <!--/*@thymesVar id="stack" type="java.lang.Exception"*/-->
+            <span class="strong" th:text="${stack}">Error msg</span>
+            <ol th:if="${stack}">
+                <!--/*@thymesVar id="stackTrace" type="java.lang.StackTraceElement"*/-->
+                <li th:each="str : ${stack.stackTrace}" th:text="${str}">StackLine</li>
+            </ol>
+            <!--/*@thymesVar id="statusCode" type="java.lang.Integer"*/-->
+            <!--/*@thymesVar id="errMsg" type="java.lang.String"*/-->
+            <h2 th:if="${statusCode}" th:text="|${statusCode} ${errMsg}|"></h2>
+        </div>
+        <div>
+            Please contact the operator with the above information.
+        </div>
     </div>
-    <div class="alert-error">
-        <!--/*@thymesVar id="stack" type="java.lang.Exception"*/-->
-        <span class="strong" th:text="${stack}">Error msg</span>
-        <ol th:if="${stack}">
-            <!--/*@thymesVar id="stackTrace" type="java.lang.StackTraceElement"*/-->
-            <li th:each="str : ${stack.stackTrace}" th:text="${str}">StackLine</li>
-        </ol>
-        <!--/*@thymesVar id="statusCode" type="java.lang.Integer"*/-->
-        <!--/*@thymesVar id="errMsg" type="java.lang.String"*/-->
-        <h2 th:if="${statusCode}" th:text="|${statusCode} ${errMsg}|"></h2>
-    </div>
-    <div>
-        Please contact the operator with the above information.
-    </div>
-</div>
 </body>
 </html>

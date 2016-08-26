@@ -16,6 +16,7 @@ public class WebMvcConfigurer extends WebMvcConfigurerAdapter {
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry) {
 		registry.addViewController("/auth/login");
+		registry.addViewController("/errors/error");
 	}
 
 	@Bean
