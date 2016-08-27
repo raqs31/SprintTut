@@ -12,8 +12,8 @@
             <li>
                 <a th:href="@{/arena/actors}">Lista aktorów</a>
             </li>
-            <li>
-                <a sec:authorize="isAuthenticated()" th:text="|#{nav.logged} ${#authentication.name}|"
+            <li sec:authorize="isAuthenticated()">
+                <a th:text="|#{nav.logged} ${#authentication.name}|"
                    th:href="@{/auth/profile/{login}(login=${#authentication.name})}">Profil użytkownika</a>
             </li>
         </ol>

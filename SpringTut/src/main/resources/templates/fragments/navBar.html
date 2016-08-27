@@ -20,8 +20,8 @@
                 <li>
                     <a th:text="#{admin.console.title}" th:href="@{/admin/console}"></a>
                 </li>
-                <li>
-                    <a sec:authorize="isAuthenticated()" th:text="|#{nav.logged} ${#authentication.name}|" th:href="@{/auth/profile/{login}(login=${#authentication.name})}" ></a>
+                <li sec:authorize="isAuthenticated()">
+                    <a th:text="|#{nav.logged} ${#authentication.name}|" th:href="@{/auth/profile/{login}(login=${#authentication.name})}" ></a>
                 </li>
             </ul>
         </div>

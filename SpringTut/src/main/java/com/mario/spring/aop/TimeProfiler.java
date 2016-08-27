@@ -4,6 +4,7 @@ import org.apache.log4j.Logger;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
 /**
@@ -14,7 +15,10 @@ import org.springframework.stereotype.Component;
 public class TimeProfiler {
 	private static final Logger logger = Logger.getLogger(TimeProfiler.class);
 
-	@Around(value = "@annotation(com.mario.spring.aop.Profile)")
+	@Pointcut("execution(public * *(..))")
+	public void anyPublicOperation() {};
+
+	@Around(value = "anyPublicOperation() && @annotation(com.mario.spring.aop.Profile)")
 	public Object executionTime(ProceedingJoinPoint pjp)  throws Throwable {
 		long time = System.nanoTime();
 		Object ret = pjp.proceed();
