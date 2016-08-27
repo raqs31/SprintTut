@@ -1,4 +1,4 @@
-package com.mario.spring.domain.repository.repository;
+package com.mario.spring.domain.repository;
 
 import com.mario.spring.domain.model.arena.Actor;
 import org.springframework.data.repository.CrudRepository;

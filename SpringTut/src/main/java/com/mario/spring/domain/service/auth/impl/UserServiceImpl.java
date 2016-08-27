@@ -1,7 +1,8 @@
 package com.mario.spring.domain.service.auth.impl;
 
+import com.mario.spring.aop.Profile;
 import com.mario.spring.domain.model.auth.User;
-import com.mario.spring.domain.repository.repository.UserRepository;
+import com.mario.spring.domain.repository.UserRepository;
 import com.mario.spring.domain.service.auth.UserService;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -23,6 +24,7 @@ public class UserServiceImpl implements UserService {
 	@Inject
 	private UserRepository userRepository;
 
+	@Profile
 	@Override
 	public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
 		User u = userRepository.findOneByUserNameOrEmailAllIgnoreCase(s,s);

@@ -1,7 +1,7 @@
 package com.mario.spring.domain.service.arena.impl;
 
 import com.mario.spring.domain.model.arena.Actor;
-import com.mario.spring.domain.repository.repository.ActorRepository;
+import com.mario.spring.domain.repository.ActorRepository;
 import com.mario.spring.domain.service.arena.ActorService;
 import org.springframework.stereotype.Service;
 
