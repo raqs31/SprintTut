@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="fragments/layout">
+<head>
+    <title>Details</title>
+</head>
+
+
+<body>
+<!--/*@thymesVar id="dict" type="com.mario.domain.model.dict.Dictionary"*/-->
+<div layout:fragment="content" th:with="d = ${dict}">
+    <h1 th:text="#{todo}"></h1>
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="dictType">Dict type:</label>
+            <div class="col-sm-10">
+                <input id="dictType" type="text" class="form-control" th:value="${d.dictType}"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="dictDescr">Description:</label>
+            <div class="col-sm-10">
+                <input id="dictDescr" type="text" class="form-control" th:value="${d.description}"/>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

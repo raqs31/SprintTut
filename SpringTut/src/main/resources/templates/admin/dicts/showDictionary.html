@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      lang="en"
+      layout:decorator="fragments/layout">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<!-- Main Content -->
+<div layout:fragment="content">
+    <table>
+        <tr>
+            <td th:text="${dictionary.dictType}"></td>
+        </tr>
+        <tr>
+            <td th:text="${dictionary.description}"></td>
+        </tr>
+        <tr>
+            <td th:text="${dictionary.value}"></td>
+        </tr>
+        <tr>
+            <td th:text="${dictionary.attr1}"></td>
+        </tr>
+        <tr>
+            <td th:text="${dictionary.attr2}"></td>
+        </tr>
+        <tr>
+            <td th:text="${dictionary.numAttr1}"></td>
+        </tr>
+        <tr>
+            <td th:text="${dictionary.numAttr2}"></td>
+        </tr>
+        <tr>
+            <td th:text="${dictionary.order}"></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

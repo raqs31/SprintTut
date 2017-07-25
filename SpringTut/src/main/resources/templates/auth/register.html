@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      lang="en"
+      layout:decorator="fragments/layout">
+<head>
+    <title></title>
+</head>
+<body>
+<!-- Main Content -->
+<div layout:fragment="content">
+    <div class="container xlg-m-top">
+        <div class="row">
+            <!--/*@thymesVar id="acountDTO" type="com.mario.web.co.auth.dto.UserDTO"*/-->
+            <form id="registerForm" action="#" th:action="@{/auth/register}" th:object="${acountDTO}"
+                  class="form-horizontal lg-m-top" method="POST">
+                <div class="col-md-9 xs-p-right">
+                    <div class="inner">
+                        <div class="row">
+                            <div class="col-md-9">
+                                <p class="no-m">Rejestracja konta:</p>
+
+                                <div class="form-group xs-m-top">
+                                    <label class="col-sm-4 control-label">Adres email (login)</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" th:field="*{email}"/>
+                                        <div th:replace="fragments/errors::validation('email')"></div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group xs-m-top">
+                                    <label class="col-sm-4 control-label">Hasło</label>
+                                    <div class="col-sm-8">
+                                        <input type="password" class="form-control" th:field="*{password}"/>
+                                        <div th:replace="fragments/errors::validation('password')"></div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group xs-m-top">
+                                    <label class="col-sm-4 control-label">Powtórz hasło</label>
+                                    <div class="col-sm-8">
+                                        <input type="password" class="form-control" th:field="*{confirmPassword}"/>
+                                        <div th:replace="fragments/errors::validation('confirmPassword')"></div>
+                                        <div th:replace="fragments/errors::validation('global')"></div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">Kraj</label>
+                                    <div class="col-sm-8">
+                                        <select class="selectpicker" th:field="*{country}">
+                                            <option value=""></option>
+                                            <option value="Poland" th:text="#{register.from.county.poland}">Option 1
+                                            </option>
+                                            <option value="England" th:text="#{register.from.county.england}">Option 2
+                                            </option>
+                                        </select>
+                                        <div th:replace="fragments/errors::validation('country')"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <img class="img-responsive center" src="../../img/example_person.jpg" alt=""/>
+
+                                <div class="text-center">
+                                    <a href="" class="btn btn_custom light small-m-top"><img src="../../img/fa_plus.png"
+                                                                                             alt=""/> Dodaj zdjęcie</a>
+                                    <a href="" class="btn btn_custom light small-m-top"><img
+                                            src="../../img/fa_delete.png" alt=""/> Usuń zdjęcie</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="inner">
+                        <div class="row">
+                            <div class="col-md-9">
+                                <div class="form-group xs-m-top">
+                                    <label class="col-sm-4 control-label">Pełna nazwa</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" th:field="*{fullName}"/>
+                                        <div th:replace="fragments/errors::validation('fullName')"></div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group xs-m-top">
+                                    <label class="col-sm-4 control-label">NIP</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" th:field="*{nip}"/>
+                                        <div th:replace="fragments/errors::validation('nip')"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3"></div>
+                        </div>
+                    </div>
+
+                    <div class="inner">
+                        <div class="row">
+                            <div class="col-md-9">
+                                <div class="form-group xs-m-top">
+                                    <label class="col-sm-4 control-label">Adres</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" th:field="*{address}"/>
+                                        <div th:replace="fragments/errors::validation('address')"></div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group xs-m-top">
+                                    <label class="col-sm-4 control-label">Miejscowość</label>
+                                    <div class="col-sm-8">
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                                <input type="text" class="form-control" th:field="*{city}"/>
+                                                <div th:replace="fragments/errors::validation('city')"></div>
+                                            </div>
+
+                                            <div class="col-md-2 text-center">
+                                                <label class="control-label">Kod</label>
+                                            </div>
+
+                                            <div class="col-md-5">
+                                                <input type="text" class="form-control" th:value="*{postalCode}"/>
+                                                <div th:replace="fragments/errors::validation('postalCode')"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group xs-m-top">
+                                    <label class="col-sm-4 control-label">Województwo</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" th:field="*{province}"/>
+                                        <div th:replace="fragments/errors::validation('province')"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3"></div>
+                        </div>
+                    </div>
+
+                    <div class="inner">
+                        <div class="row">
+                            <div class="col-md-9">
+                                <div class="form-group xs-m-top">
+                                    <label class="col-sm-4 control-label">Telefon</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" th:field="*{phoneNumber}"/>
+                                        <div th:replace="fragments/errors::validation('phoneNumber')"></div>
+                                    </div>
+                                </div>
+
+
+                                <div class="inner right_height">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" id="checkBoxRules" name="checkBoxRules"
+                                                   th:checkead="*{checkBoxRules}"/> Wyrażam zgodę na warunki <a href="">regulaminu</a>
+                                            <div th:replace="fragments/errors::validation('checkBoxRules')"></div>
+                                        </label>
+                                    </div>
+
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" id="checkBoxInformation" name="checkBoxInformation"
+                                                   th:checked="*{checkBoxInformation}"/> Wyrażam zgodę na otrzymywanie
+                                            informacji zgodnie <a href="">oświadczeniem</a>
+                                            <div th:replace="fragments/errors::validation('checkBoxInformation')"></div>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group xs-m-top">
+                                    <label class="col-sm-4 control-label"></label>
+                                    <div class="col-sm-8 text-center">
+                                        <a id="register" onclick="document.getElementById('registerForm').submit();"
+                                           class="btn btn_custom light small-m-top"
+                                           th:text="#{register.form.submit}"></a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-3"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<script src="../../js/bootstrap-select.js"></script>
+</body>
+</html>

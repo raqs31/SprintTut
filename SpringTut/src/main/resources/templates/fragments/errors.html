@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+</head>
+<body>
+<ul th:fragment="validation (field)" th:if="${#fields.hasErrors(field)}">
+    <li th:each="err : ${#fields.errors(field)}" th:text="#{${err}}">Information checkbox error</li>
+</ul>
+</body>
+</html>

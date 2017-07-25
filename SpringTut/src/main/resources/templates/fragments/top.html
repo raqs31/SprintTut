@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}" href="../../css/bootstrap.css"/>
+</head>
+<body>
+<div th:fragment="menu" class="container-fluid top_menu">
+    <div class="main_menu_top">
+        <img class="img-responsive logo" th:src="@{../../img/logo.png}" alt=""/>
+    </div>
+
+    <div class="main_search_top">
+        <h4>Baza aktorów</h4>
+    </div>
+
+    <div class="main_content_top">
+        <ul class="list-unstyled list-inline">
+            <li><a href="/arena/search">Aktorki</a></li>
+            <li><a href="/arena/search">Aktorzy</a></li>
+            <li><a href="/arena/search">Aktorzy nieprofesjonalni</a></li>
+        </ul>
+    </div>
+
+    <a th:href="@{/logout}" class="btn btn_custom light menu base-m-right"><img th:src="@{../../img/fa_logout.png}"/>
+        Wyloguj</a>
+</div>
+</body>
+</html>

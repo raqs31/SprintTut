@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="fragments/layout">
+<head>
+    <title th:text="#{admin.console.dict.list.header}">Title</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <h1 th:text="#{todo}"></h1>
+    <h1 th:text="#{admin.console.dict.list.header}"></h1>
+    <ul class="list-group">
+        <!--/*@thymesVar id="dictTypes" type="com.mario.domain.model.dict.DictionaryType"*/-->
+        <li th:each="dict : ${dictTypes}" class="list-group-item">
+            <a href="dicts" th:href="@{/admin/dicts/details/{dictId}(dictId = ${dict.id})}"
+               th:text="${dict.description}">Dictionary</a>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

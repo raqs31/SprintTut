@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      lang="en"
+      layout:decorator="fragments/layout">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<!-- Main Content -->
+<div layout:fragment="content">
+    <h1 th:text="#{admin.console.header}"></h1>
+
+    <ul class="list-group">
+        <li class="list-group-item">
+            <a href="#" th:href="@{/admin/dicts/}" th:text="#{admin.console.dict.list.header}">Dictionaries</a>
+        </li>
+        <li class="list-group-item">
+            <a href="#" th:href="@{/admin/migrate/}">Track migrator from cache</a>
+        </li>
+        <li class="list-group-item">
+            <a th:href="@{/admin/dict/adder}"> Dodawanie slownikow</a>
+        </li>
+        <li class="list-group-item">
+            <a th:href="@{/admin/dict/parentAdder}"> Dodawanie slownikow Nadrzednych</a>
+        </li>
+        <li class="list-group-item">
+            <form method="post" enctype="multipart/form-data" action="/admin/tracksFromFile">
+                <input type="file" name="uploadTrackFile"/>
+                <input type="submit" value="Załaduj utwory z pliku"/>
+            </form>
+        </li>
+
+    </ul>
+</div>
+
+</body>
+</html>

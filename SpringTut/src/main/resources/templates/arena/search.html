@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=0, user-scalable=yes"/>
+    <title></title>
+    <link th:href="@{../../css/style.css}" rel="stylesheet"/>
+    <link th:href="@{https://fonts.googleapis.com/css(family='Lato:400,300,700', subset='latin,latin-ext')}"
+          rel='stylesheet' type='text/css'/>
+    <script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js}"></script>
+    <script th:src="@{../../js/bootstrap.min.js}"></script>
+    <script th:src="@{../../js/bootstrap-select.js}"></script>
+    <script th:src="@{../../js/slick.js}"></script>
+</head>
+<body class="home">
+<div class="container-fluid top_menu">
+    <div class="main_menu_top">
+        <img class="img-responsive logo" th:src="@{../../img/logo.png}" alt=""/>
+    </div>
+
+    <div class="main_search_top">
+        <h4>Baza aktorów</h4>
+    </div>
+
+    <div class="main_content_top">
+        <ul class="list-unstyled list-inline">
+            <li><a href="">Aktorki</a></li>
+            <li><a href="">Aktorzy</a></li>
+            <li><a href="">Aktorzy nieprofesjonalni</a></li>
+        </ul>
+    </div>
+
+    <a href="" class="btn btn_custom light menu base-m-right"><img th:src="@{../../img/fa_logout.png}"/> Wyloguj</a>
+</div>
+
+<div class="container-fluid no-p pos-rel">
+
+    <!-- Main Menu -->
+    <div class="main_menu">
+        <ul class="list-unstyled">
+            <li><a href="">O Nas</a></li>
+            <li><a href="">Regulamin</a></li>
+            <li><a href="">Kontakt</a></li>
+            <hr class="menu"/>
+            <li><a href="">Dla aktorów</a></li>
+            <hr class="menu"/>
+            <li class="no_h"><a>Zalogowany: <span>Super Agencja</span></a></li>
+            <li class="no_h"><a>Ostatnie logowanie: <span>20.07.2016<br/> 20:35</span></a></li>
+        </ul>
+
+        <div class="text-center xlg-m-top">
+            <a href="" class="btn btn_custom block"><img th:src="@{../../img/fa_box.svg}"/> Schowek (<span>0</span>)</a>
+            <a href="" class="btn btn_custom block smbase-m-top"><img th:src="@{../../img/fa_star.}"/> Mój profil</a>
+        </div>
+    </div>
+
+    <!-- Main Search -->
+    <div class="main_search">
+        <h4 class="text-center text-uppercase">Kryteria wyszukiwania</h4>
+        <hr/>
+        <h5>Informacje podstawowe:</h5>
+        <form action="" class="form-horizontal base-m-top lg-m-bottom">
+            <div class="form-group">
+                <label class="col-sm-4 control-label">Imię</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-4 control-label">Nawisko</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-4 control-label">Wzrost od</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-4 control-label">Waga od</label>
+                <div class="col-sm-8">
+                    <div class="row">
+                        <div class="col-xs-5 no-p-right">
+                            <input type="text" class="form-control"/>
+                        </div>
+                        <div class="col-xs-2">
+                            <p>do</p>
+                        </div>
+                        <div class="col-xs-5 no-p-left">
+                            <input type="text" class="form-control"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-4 control-label">Kolor oczu</label>
+                <div class="col-sm-8">
+                    <select class="selectpicker">
+                        <option></option>
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-4 control-label">Kolor włosów</label>
+                <div class="col-sm-8">
+                    <select class="selectpicker">
+                        <option></option>
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+
+        <!-- Umiejętności -->
+        <div class="boxed">
+            <h4 class="skills_btn">Umiejętności <img class="up" th:src="@{../../img/double_arrow_up.png}" alt=""/><img
+                    class="right" th:src="@{../../img/double_arrow_right.png}" alt=""/></h4>
+            <div class="wrapper skills_wrapper">
+                <p class="active xs-m-top">
+                    <check></check>
+                    <minw>Gra na instrumentach</minw>
+                    <span class="number">Wybr/ano <num>4</num></span> <span class="clean">Wyczyść</span> <i
+                        class="fa fa-chevron-up" aria-hidden="true"></i></p>
+
+                <div class="radio">
+                    <label>
+                        <input type="radio" value="option1"/> Altówka
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" value="option2"/> Akordeon
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" value="option3" checked="true"/> Bębny
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" value="option4" checked="true"/> Fagot
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" value="option5" checked="true"/> Flet koncertowy
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" value="option1" checked="true"/> Altówka
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" value="option2"/> Akordeon
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" value="option3"/> Bębny
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" value="option4"/> Fagot
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" value="option5"/> Flet koncertowy
+                    </label>
+                </div>
+
+                <p class="">
+                    <check></check>
+                    <minw>Śpiew</minw>
+                    <span class="number">Wybr/ano <num>0</num></span> <span class="clean">Wyczyść</span> <i
+                        class="fa fa-chevron-down" aria-hidden="true"></i></p>
+
+                <p class="">
+                    <check></check>
+                    <minw>Taniec</minw>
+                    <span class="number">Wybr/ano <num>0</num></span> <span class="clean">Wyczyść</span> <i
+                        class="fa fa-chevron-down" aria-hidden="true"></i></p>
+
+                <p class="">
+                    <check></check>
+                    <minw>Prawo jazdy</minw>
+                    <span class="number">Wybr/ano <num>0</num></span> <span class="clean">Wyczyść</span> <i
+                        class="fa fa-chevron-down" aria-hidden="true"></i></p>
+
+                <p class="xs-m-bottom">
+                    <check></check>
+                    <minw>Inne umiejętności</minw>
+                    <span class="number">Wybr/ano <num>0</num></span> <span class="clean">Wyczyść</span> <i
+                        class="fa fa-chevron-down" aria-hidden="true"></i></p>
+
+            </div>
+        </div>
+
+        <!-- Języki -->
+        <div class="boxed">
+            <h4 class="language_btn">Języki <img class="up" th:src="@{../../img/double_arrow_up.png}" alt=""/><img
+                    class="right" th:src="@{../../img/double_arrow_right.png}" alt=""/></h4>
+
+            <div class="wrapper language_wrapper">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th>Biegła</th>
+                        <th>Średnia</th>
+                        <th>Słaba</th>
+                    </tr>
+                    </thead>
+                    <tbody class="text-center">
+                    <tr>
+                        <td>angielski</td>
+                        <td><input type="checkbox"/></td>
+                        <td><input type="checkbox"/></td>
+                        <td><input type="checkbox"/></td>
+                    </tr>
+                    <tr>
+                        <td>białoruski</td>
+                        <td><input type="checkbox"/></td>
+                        <td><input type="checkbox"/></td>
+                        <td><input type="checkbox"/></td>
+                    </tr>
+                    <tr>
+                        <td>chiński</td>
+                        <td><input type="checkbox"/></td>
+                        <td><input type="checkbox"/></td>
+                        <td><input type="checkbox"/></td>
+                    </tr>
+                    <tr>
+                        <td>czeski</td>
+                        <td><input type="checkbox"/></td>
+                        <td><input type="checkbox"/></td>
+                        <td><input type="checkbox"/></td>
+                    </tr>
+                    <tr>
+                        <td>duński</td>
+                        <td><input type="checkbox"/></td>
+                        <td><input type="checkbox"/></td>
+                        <td><input type="checkbox"/></td>
+                    </tr>
+                    <tr>
+                        <td>fiński</td>
+                        <td><input type="checkbox"/></td>
+                        <td><input type="checkbox"/></td>
+                        <td><input type="checkbox"/></td>
+                    </tr>
+                    <tr>
+                        <td>francuski</td>
+                        <td><input type="checkbox"/></td>
+                        <td><input type="checkbox"/></td>
+                        <td><input type="checkbox"/></td>
+                    </tr>
+                    <tr>
+                        <td>hebr/ajski</td>
+                        <td><input type="checkbox"/></td>
+                        <td><input type="checkbox"/></td>
+                        <td><input type="checkbox"/></td>
+                    </tr>
+                    <tr>
+                        <td>hiszpański</td>
+                        <td><input type="checkbox"/></td>
+                        <td><input type="checkbox"/></td>
+                        <td><input type="checkbox"/></td>
+                    </tr>
+                    <tr>
+                        <td>holenderski</td>
+                        <td><input type="checkbox"/></td>
+                        <td><input type="checkbox"/></td>
+                        <td><input type="checkbox"/></td>
+                    </tr>
+                    <tr>
+                        <td>irlandzki</td>
+                        <td><input type="checkbox"/></td>
+                        <td><input type="checkbox"/></td>
+                        <td><input type="checkbox"/></td>
+                    </tr>
+                    <tr>
+                        <td>japoński</td>
+                        <td><input type="checkbox"/></td>
+                        <td><input type="checkbox"/></td>
+                        <td><input type="checkbox"/></td>
+                    </tr>
+                    <tr>
+                        <td>łacina</td>
+                        <td><input type="checkbox"/></td>
+                        <td><input type="checkbox"/></td>
+                        <td><input type="checkbox"/></td>
+                    </tr>
+                    <tr>
+                        <td>niemiecki</td>
+                        <td><input type="checkbox"/></td>
+                        <td><input type="checkbox"/></td>
+                        <td><input type="checkbox"/></td>
+                    </tr>
+                    <tr>
+                        <td>norweski</td>
+                        <td><input type="checkbox"/></td>
+                        <td><input type="checkbox"/></td>
+                        <td><input type="checkbox"/></td>
+                    </tr>
+                    <tr>
+                        <td>portugalski</td>
+                        <td><input type="checkbox"/></td>
+                        <td><input type="checkbox"/></td>
+                        <td><input type="checkbox"/></td>
+                    </tr>
+                    <tr>
+                        <td>rosyjski</td>
+                        <td><input type="checkbox"/></td>
+                        <td><input type="checkbox"/></td>
+                        <td><input type="checkbox"/></td>
+                    </tr>
+                    <tr>
+                        <td>serbo-chorwacki</td>
+                        <td><input type="checkbox"/></td>
+                        <td><input type="checkbox"/></td>
+                        <td><input type="checkbox"/></td>
+                    </tr>
+                    <tr>
+                        <td>szewdzki</td>
+                        <td><input type="checkbox"/></td>
+                        <td><input type="checkbox"/></td>
+                        <td><input type="checkbox"/></td>
+                    </tr>
+                    <tr>
+                        <td>ukraiński</td>
+                        <td><input type="checkbox"/></td>
+                        <td><input type="checkbox"/></td>
+                        <td><input type="checkbox"/></td>
+                    </tr>
+                    <tr>
+                        <td>węgierski</td>
+                        <td><input type="checkbox"/></td>
+                        <td><input type="checkbox"/></td>
+                        <td><input type="checkbox"/></td>
+                    </tr>
+                    <tr>
+                        <td>włoski</td>
+                        <td><input type="checkbox"/></td>
+                        <td><input type="checkbox"/></td>
+                        <td><input type="checkbox"/></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Specjalizacja -->
+        <div class="boxed">
+            <h4 class="spec_btn">Specjalizacja <img class="up" th:src="@{../../img/double_arrow_up.png}" alt=""/><img
+                    class="right" th:src="@{../../img/double_arrow_right.png}" alt=""/></h4>
+
+            <div class="wrapper spec_wrapper">
+                <p class="active xs-m-top">
+                    <check></check>
+                    <minw>Aktor/ka dramatu</minw>
+                </p>
+
+                <p class="xs-m-top">
+                    <check></check>
+                    <minw>Aktor/ka lekarz/ka</minw>
+                </p>
+
+                <p class="xs-m-top">
+                    <check></check>
+                    <minw>Porodysta/ka Iluzjonista/ka</minw>
+                </p>
+
+                <p class="xs-m-top">
+                    <check></check>
+                    <minw>Tancerz/ka</minw>
+                </p>
+
+                <p class="xs-m-top">
+                    <check></check>
+                    <minw>Piosenkarz/rka</minw>
+                </p>
+
+                <p class="xs-m-top">
+                    <check></check>
+                    <minw>Lektor/la</minw>
+                </p>
+
+                <p class="xs-m-top">
+                    <check></check>
+                    <minw>Prezeter/ka</minw>
+                </p>
+
+                <p class="active xs-m-top">
+                    <check></check>
+                    <minw>Reżyser/ka</minw>
+                    <span class="number">Wybr/ano <num>4</num></span> <span class="clean">Wyczyść</span> <i
+                        class="fa fa-chevron-up" aria-hidden="true"></i></p>
+                <div class="radio">
+                    <label>
+                        <input type="radio" value="option1"/> dubbingowy
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" value="option2"/> filmowy
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" value="option3" checked="true"/> radiowy
+                    </label>
+                </div>
+
+                <p class="xs-m-top">
+                    <check></check>
+                    <minw>Choreograf/ka</minw>
+                </p>
+
+                <p class="xs-m-top">
+                    <check></check>
+                    <minw>Kompozytor/ka</minw>
+                </p>
+
+                <p class="xs-m-top">
+                    <check></check>
+                    <minw>Scenograf/ka</minw>
+                </p>
+
+                <p class="xs-m-top">
+                    <check></check>
+                    <minw>Realizator/ka dzwięku</minw>
+                </p>
+
+                <p class="xs-m-top">
+                    <check></check>
+                    <minw>Krytyk teatralnyc</minw>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main_content">
+        <div class="row">
+            <div class="col-md-8">
+
+                <div class="row">
+                    <div class="col-md-3 personTile active">
+                        <a href="">
+                            <figure>
+                                <img class="img-responsive center" th:src="@{../../img/example_person.jpg}" alt=""/>
+                                <figcaption>Jan Kowalski</figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="col-md-3 personTile">
+                        <a href="">
+                            <figure>
+                                <img class="img-responsive center" th:src="@{../../img/example_person.jpg}" alt=""/>
+                                <figcaption>Jan Kowalski</figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="col-md-3 personTile">
+                        <a href="">
+                            <figure>
+                                <img class="img-responsive center" th:src="@{../../img/example_person.jpg}" alt=""/>
+                                <figcaption>Jan Kowalski</figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="col-md-3 personTile">
+                        <a href="">
+                            <figure>
+                                <img class="img-responsive center" th:src="@{../../img/example_person.jpg}" alt=""/>
+                                <figcaption>Jan Kowalski</figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="col-md-3 personTile">
+                        <a href="">
+                            <figure>
+                                <img class="img-responsive center" th:src="@{../../img/example_person.jpg}" alt=""/>
+                                <figcaption>Jan Kowalski</figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="col-md-3 personTile">
+                        <a href="">
+                            <figure>
+                                <img class="img-responsive center" th:src="@{../../img/example_person.jpg}" alt=""/>
+                                <figcaption>Jan Kowalski</figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="col-md-3 personTile">
+                        <a href="">
+                            <figure>
+                                <img class="img-responsive center" th:src="@{../../img/example_person.jpg}" alt=""/>
+                                <figcaption>Jan Kowalski</figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="col-md-3 personTile">
+                        <a href="">
+                            <figure>
+                                <img class="img-responsive center" th:src="@{../../img/example_person.jpg}" alt=""/>
+                                <figcaption>Jan Kowalski</figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="col-md-3 personTile">
+                        <a href="">
+                            <figure>
+                                <img class="img-responsive center" th:src="@{../../img/example_person.jpg}" alt=""/>
+                                <figcaption>Jan Kowalski</figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="col-md-3 personTile">
+                        <a href="">
+                            <figure>
+                                <img class="img-responsive center" th:src="@{../../img/example_person.jpg}" alt=""/>
+                                <figcaption>Jan Kowalski</figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="col-md-3 personTile">
+                        <a href="">
+                            <figure>
+                                <img class="img-responsive center" th:src="@{../../img/example_person.jpg}" alt=""/>
+                                <figcaption>Jan Kowalski</figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="col-md-3 personTile">
+                        <a href="">
+                            <figure>/>
+                                <figcaption>Jan Kowalski</figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="col-md-3 personTile">
+                        <a href="">
+                            <figure>
+                                <img class="img-responsive center" th:src="@{../../img/example_person.jpg}" alt=""/>
+                                <figcaption>Jan Kowalski</figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="col-md-3 personTile">
+                        <a href="">
+                            <figure>
+                                <img class="img-responsive center" th:src="@{../../img/example_person.jpg}" alt=""/>
+                                <figcaption>Jan Kowalski</figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="col-md-3 personTile">
+                        <a href="">
+                            <figure>
+                                <img class="img-responsive center" th:src="@{../../img/example_person.jpg}" alt=""/>
+                                <figcaption>Jan Kowalski</figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="col-md-3 personTile">
+                        <a href="">
+                            <figure>
+                                <img class="img-responsive center" th:src="@{../../img/example_person.jpg}" alt=""/>
+                                <figcaption>Jan Kowalski</figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 person_description">
+                <img class="img-responsive center" th:src="@{../../img/example_person.jpg}" alt=""/>
+                <p class="person_name">Jan Kowalski</p>
+                <div class="row">
+                    <div class="col-md-6">Rok i miejsce<br/> urodzenia</div>
+                    <div class="col-md-6">1983.12.05<br/> Warszawa</div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">Wzrost i waga</div>
+                    <div class="col-md-6">186cm, 80 kg</div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">Wykształcenie</div>
+                    <div class="col-md-6">Wyższe</div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">Nazwa uczelni</div>
+                    <div class="col-md-6">Szkoła Aktorska</div>
+                </div>
+
+                <div class="text-right lg-m-top">
+                    <a href="">Dodaj <img th:src="@{../../img/btn_add.jpg}"/></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+		$('.skills_btn').click(function () {
+			$('.language_wrapper').removeClass('toggle');
+			$('.spec_wrapper').removeClass('toggle');
+			$('.skills_wrapper').toggleClass('toggle');
+			$('.skills_btn .up').toggleClass('toggle');
+			$('.skills_btn .right').toggleClass('toggle');
+		});
+
+		$('.language_btn').click(function () {
+			$('.spec_wrapper').removeClass('toggle');
+			$('.skills_wrapper').removeClass('toggle');
+			$('.language_wrapper').toggleClass('toggle');
+			$('.language_btn .up').toggleClass('toggle');
+			$('.language_btn .right').toggleClass('toggle');
+		});
+
+		$('.spec_btn').click(function () {
+			$('.language_wrapper').removeClass('toggle');
+			$('.skills_wrapper').removeClass('toggle');
+			$('.spec_wrapper').toggleClass('toggle');
+			$('.spec_btn .up').toggleClass('toggle');
+			$('.spec_btn .right').toggleClass('toggle');
+		});
+
+		$('.main_search .wrapper p').click(function () {
+			$(this).toggleClass('active');
+		});
+    </script>
+
+    <script th:src="@{../../js/bootstrap-select.js}"></script>
+</div>
+
+</body>
+</html>

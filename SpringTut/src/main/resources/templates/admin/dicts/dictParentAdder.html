@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      lang="en"
+      layout:decorator="fragments/layout">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<!-- Main Content -->
+<div layout:fragment="content">
+    <div>
+        <h1> Dodawanie wartości słownikowych Nadrzednych</h1>
+        <form action="#" th:action="@{/admin/dict/parentAdder}" th:object="${dictionary}" method="post">
+            <table>
+
+                <tr>
+                    <td>Opis:</td>
+                    <td><input type="text" id="description" name="description" th:value="${description}"/><br/></td>
+                </tr>
+                <tr>
+                    <td> Wartosc:</td>
+                    <td><input type="text" id="value" name="value" th:value="${value}"/><br/></td>
+                </tr>
+                <tr>
+                    <td> Atrybut1:</td>
+                    <td><input type="text" id="attr1" name="attr1" th:value="${attr1}"/><br/></td>
+                </tr>
+                <tr>
+                    <td> Atrybut2:</td>
+                    <td><input type="text" id="attr2" name="attr2" th:value="${attr2}"/><br/></td>
+                </tr>
+                <tr>
+                    <td> Numer Atrybutu1</td>
+                    <td><input type="text" id="numAttr1" name="numAttr1" th:field="*{numAttr1}"/><br/></td>
+                    <td th:if="${#fields.hasErrors('numAttr1')}" th:errors="*{numAttr1}"
+                        th:text="#{dictionary.from.number.error}">error
+                    </td>
+
+                </tr>
+                <tr>
+                    <td> Nuer Atrybutu2</td>
+                    <td><input type="text" id="numAttr2" name="numAttr2" th:field="*{numAttr2}"/><br/></td>
+                    <td th:if="${#fields.hasErrors('numAttr2')}" th:errors="*{numAttr2}"
+                        th:text="#{dictionary.from.number.error}">error
+                    </td>
+                </tr>
+                <tr>
+                    <td> Kolejnosc slownika</td>
+                    <td><input type="text" id="order" name="order" th:field="*{order}"/><br/></td>
+                    <td th:if="${#fields.hasErrors('order')}" th:errors="*{order}"
+                        th:text="#{dictionary.from.number.error}">error
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Dodaj"/></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+</body>
+</html>

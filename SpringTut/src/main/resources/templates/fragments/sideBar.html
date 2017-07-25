@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+</head>
+<body>
+<div th:fragment="left" class="main_menu">
+    <ul class="list-unstyled">
+        <li><a href="/arena/about">O Nas</a></li>
+        <li><a href="/arena/rules">Regulamin</a></li>
+        <li><a href="/arena/contact">Kontakt</a></li>
+        <hr class="menu"/>
+        <li><a href="/arena/favourites">Dla aktorów</a></li>
+        <hr class="menu"/>
+        <li class="no_h"><a>Zalogowany: <span>Super Agencja</span></a></li>
+        <li class="no_h"><a>Ostatnie logowanie: <span>20.07.2016<br/> 20:35</span></a></li>
+        <li><a href="/admin/administratorPanel">Panel Administratora</a></li>
+    </ul>
+
+    <div class="text-center xlg-m-top">
+        <a href="" class="btn btn_custom block smbase-m-top"><img th:src="@{../../img/fa_save.svg}"/> Zapisz zmiany</a>
+        <a href="" class="btn btn_custom block smbase-m-top"><img th:src="@{../../img/fa_close.png}"/> Anuluj zmiany</a>
+        <a href="" class="btn btn_custom block smbase-m-top join_cv"><img th:src="@{../../img/fa_doc.svg}"/> Dołącz
+            CV</a>
+        <a href="" class="btn btn_custom block smbase-m-top"><img th:src="@{../../img/fa_download.svg}"/> Pobierz CV</a>
+        <a href="" class="btn btn_custom block smbase-m-top"><img th:src="@{../../img/fa_print.svg}"/> Drukuj Portfolio</a>
+    </div>
+</div>
+</body>
+</html>

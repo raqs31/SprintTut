@@ -3,16 +3,28 @@
       xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
-    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" href="../../css/bootstrap.min.css"/>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=0, user-scalable=yes"/>
+    <title></title>
+    <link th:href="@{../../css/style.css}" rel="stylesheet"/>
+    <link th:href="@{https://fonts.googleapis.com/css(family='Lato:400,300,700', subset='latin,latin-ext')}"
+          rel='stylesheet' type='text/css'/>
+    <script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js}"></script>
+    <script th:src="@{../../js/bootstrap.min.js}"></script>
+    <script th:src="@{../../js/bootstrap-select.js}"></script>
+    <script th:src="@{../../js/slick.js}"></script>
 </head>
 <body>
-<div class="container">
-    <div th:replace="fragments/navBar :: navBar">
-    </div>
-    <div class="content" layout:fragment="content">
-        <!--Content HERE-->
-    </div>
-    <div th:replace="fragments/footer :: footer">
+<div class="home">
+    <div th:replace="fragments/top :: menu"/>
+
+    <div class="container-fluid no-p pos-rel">
+        <div th:replace="fragments/sideBar :: left"/>
+
+        <div class="main_content search_out">
+            <div layout:fragment="content"/>
+        </div>
     </div>
 </div>
 </body>
